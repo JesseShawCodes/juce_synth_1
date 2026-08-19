@@ -1,0 +1,124 @@
+
+Showing All Issues
+
+Build target NewProject - App of project NewProject with configuration Debug
+note: Run script build phase 'Sign Target' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'NewProject - App' from project 'NewProject')
+
+
+Run script build phase 'Sign Target' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked.
+
+CompileC /Users/c9m7jf/Library/Developer/Xcode/DerivedData/NewProject-hbpkurgehupdgrbwkthrrivamjpl/Build/Intermediates.noindex/NewProject.build/Debug/NewProject\ -\ App.build/Objects-normal/arm64/MainComponent.o /Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.cpp normal arm64 c++ com.apple.compilers.llvm.clang.1_0.compiler (in target 'NewProject - App' from project 'NewProject')
+    cd /Users/c9m7jf/Developer/personal/synth_2/NewProject/Builds/MacOSX
+    
+    Using response file: /Users/c9m7jf/Library/Developer/Xcode/DerivedData/NewProject-hbpkurgehupdgrbwkthrrivamjpl/Build/Intermediates.noindex/NewProject.build/Debug/NewProject - App.build/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp
+    
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -ivfsstatcache /Users/c9m7jf/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx26.5-25F70-e082c4a02f00227109f4ed75e425c832.sdkstatcache -target arm64-apple-macos10.13 -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wunreachable-code -Wnon-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-float-conversion -Wnon-literal-null-conversion -Wobjc-literal-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -Wno-implicit-fallthrough -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -Wno-sign-conversion -Winfinite-recursion -Wmove -Wcomma -Wblock-capture-autoreleasing -Wstrict-prototypes -Wrange-loop-analysis -Wno-semicolon-before-method-body -index-store-path /Users/c9m7jf/Library/Developer/Xcode/DerivedData/NewProject-hbpkurgehupdgrbwkthrrivamjpl/Index.noindex/DataStore -Wreorder @/Users/c9m7jf/Library/Developer/Xcode/DerivedData/NewProject-hbpkurgehupdgrbwkthrrivamjpl/Build/Intermediates.noindex/NewProject.build/Debug/NewProject\ -\ App.build/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp -MMD -MT dependencies -MF /Users/c9m7jf/Library/Developer/Xcode/DerivedData/NewProject-hbpkurgehupdgrbwkthrrivamjpl/Build/Intermediates.noindex/NewProject.build/Debug/NewProject\ -\ App.build/Objects-normal/arm64/MainComponent.d --serialize-diagnostics /Users/c9m7jf/Library/Developer/Xcode/DerivedData/NewProject-hbpkurgehupdgrbwkthrrivamjpl/Build/Intermediates.noindex/NewProject.build/Debug/NewProject\ -\ App.build/Objects-normal/arm64/MainComponent.dia -c /Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.cpp -o /Users/c9m7jf/Library/Developer/Xcode/DerivedData/NewProject-hbpkurgehupdgrbwkthrrivamjpl/Build/Intermediates.noindex/NewProject.build/Debug/NewProject\ -\ App.build/Objects-normal/arm64/MainComponent.o -index-unit-output-path /NewProject.build/Debug/NewProject\ -\ App.build/Objects-normal/arm64/MainComponent.o
+
+In file included from /Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.cpp:1:
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.h:6:31: error: use of undeclared identifier 'juce'
+    6 | class MainComponent  : public juce::AudioAppComponent
+      |                               ^
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.h:6:37: error: expected class name
+    6 | class MainComponent  : public juce::AudioAppComponent
+      |                                     ^
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.h:11:22: error: only virtual member functions can be marked 'override'
+   11 |     ~MainComponent() override;
+      |                      ^~~~~~~~
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.h:14:73: error: only virtual member functions can be marked 'override'
+   14 |     void prepareToPlay (int samplesPerBlockExpected, double sampleRate) override;
+      |                                                                         ^~~~~~~~
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.h:15:35: error: use of undeclared identifier 'juce'
+   15 |     void getNextAudioBlock (const juce::AudioSourceChannelInfo& bufferToFill) override;
+      |                                   ^
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.h:16:29: error: only virtual member functions can be marked 'override'
+   16 |     void releaseResources() override;
+      |                             ^~~~~~~~
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.h:19:17: error: use of undeclared identifier 'juce'
+   19 |     void paint (juce::Graphics& g) override;
+      |                 ^
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.h:20:20: error: only virtual member functions can be marked 'override'
+   20 |     void resized() override;
+      |                    ^~~~~~~~
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.h:28:5: error: unknown type name 'JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR'
+   28 |     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
+      |     ^
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.h:28:65: error: expected ';' at end of declaration list
+   28 |     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
+      |                                                                 ^
+      |                                                                 ;
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.cpp:8:5: error: use of undeclared identifier 'setSize'
+    8 |     setSize (800, 600);
+      |     ^~~~~~~
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.cpp:11:9: error: use of undeclared identifier 'juce'
+   11 |     if (juce::RuntimePermissions::isRequired (juce::RuntimePermissions::recordAudio)
+      |         ^
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.cpp:11:47: error: use of undeclared identifier 'juce'
+   11 |     if (juce::RuntimePermissions::isRequired (juce::RuntimePermissions::recordAudio)
+      |                                               ^
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.cpp:12:14: error: use of undeclared identifier 'juce'
+   12 |         && ! juce::RuntimePermissions::isGranted (juce::RuntimePermissions::recordAudio))
+      |              ^
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.cpp:12:51: error: use of undeclared identifier 'juce'
+   12 |         && ! juce::RuntimePermissions::isGranted (juce::RuntimePermissions::recordAudio))
+      |                                                   ^
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.cpp:14:9: error: use of undeclared identifier 'juce'
+   14 |         juce::RuntimePermissions::request (juce::RuntimePermissions::recordAudio,
+      |         ^
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.cpp:14:44: error: use of undeclared identifier 'juce'
+   14 |         juce::RuntimePermissions::request (juce::RuntimePermissions::recordAudio,
+      |                                            ^
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.cpp:14:81: error: expected ')'
+   14 |         juce::RuntimePermissions::request (juce::RuntimePermissions::recordAudio,
+      |                                                                                 ^
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.cpp:14:43: note: to match this '('
+   14 |         juce::RuntimePermissions::request (juce::RuntimePermissions::recordAudio,
+      |                                           ^
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.cpp:20:9: error: use of undeclared identifier 'setAudioChannels'
+   20 |         setAudioChannels (2, 2);
+      |         ^~~~~~~~~~~~~~~~
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.h:6:31: Use of undeclared identifier 'juce'
+
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.h:6:37: Expected class name
+
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.h:11:22: Only virtual member functions can be marked 'override'
+
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.h:14:73: Only virtual member functions can be marked 'override'
+
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.h:15:35: Use of undeclared identifier 'juce'
+
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.h:16:29: Only virtual member functions can be marked 'override'
+
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.h:19:17: Use of undeclared identifier 'juce'
+
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.h:20:20: Only virtual member functions can be marked 'override'
+
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.h:28:5: Unknown type name 'JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR'
+
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.h:28:65: Expected ';' at end of declaration list
+
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.cpp:8:5: Use of undeclared identifier 'setSize'
+
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.cpp:11:9: Use of undeclared identifier 'juce'
+
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.cpp:11:47: Use of undeclared identifier 'juce'
+
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.cpp:12:14: Use of undeclared identifier 'juce'
+
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.cpp:12:51: Use of undeclared identifier 'juce'
+
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.cpp:14:9: Use of undeclared identifier 'juce'
+
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.cpp:14:44: Use of undeclared identifier 'juce'
+
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.cpp:14:81: Expected ')'
+
+/Users/c9m7jf/Developer/personal/synth_2/NewProject/Source/MainComponent.cpp:20:9: Use of undeclared identifier 'setAudioChannels'
+
+too many errors emitted, stopping now
+
+
+
+Build failed    8/18/26, 11:21 PM    0.2 seconds

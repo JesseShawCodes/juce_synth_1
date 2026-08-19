@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="YlOjdu" name="NewProject" projectType="guiapp" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
+  <MAINGROUP id="FyOL96" name="NewProject">
+    <GROUP id="{5A7F4AE8-6384-0E69-15DB-F1667D0722C0}" name="Source">
+      <FILE id="U1TZeu" name="SineOscillator.h" compile="0" resource="0"
+            file="Source/SineOscillator.h"/>
+      <FILE id="E3KAC0" name="SineOscillator.cpp" compile="1" resource="0"
+            file="Source/SineOscillator.cpp"/>
+      <FILE id="a4Vry5" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+      <FILE id="odSbGb" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
+      <FILE id="OqPC6B" name="MainComponent.cpp" compile="1" resource="0"
+            file="Source/MainComponent.cpp"/>
+    </GROUP>
+  </MAINGROUP>
+  <MODULES/>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="NewProject"/>
+        <CONFIGURATION name="Release" targetName="Synth2"/>
+      </CONFIGURATIONS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+</JUCERPROJECT>
