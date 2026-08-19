@@ -1,3 +1,6 @@
 # Build Output
 build/
 Builds
+
+# Environment Variables
+.env
