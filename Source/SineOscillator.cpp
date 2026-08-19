@@ -8,12 +8,13 @@
 #include "SineOscillator.h"
 #include <cmath>
 
-void SineOscillator::setFrequency(<#double newFrequency#>)
+void SineOscillator::setFrequency (double newFrequency)
 {
     frequency = newFrequency;
 }
 
-void SineOscillator::setSampleRate(<#double newSampleRate#>) {
+void SineOscillator::setSampleRate (double newSampleRate)
+{
     sampleRate = newSampleRate;
 }
 
