@@ -2,6 +2,7 @@
 
 #include <JuceHeader.h>
 #include "SineOscillator.h"
+#include "Envelope.h"
 
 class MainComponent  : public juce::AudioAppComponent
 {
@@ -23,7 +24,11 @@ private:
     //==============================================================================
     // Your private member variables go here...
     SineOscillator oscillator;
-
+    Envelope envelope;
+    
+    int samplesSinceNoteOn = 0;
+    bool noteReleased = false;
+    double currentSampleRate = 44100.0;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };
