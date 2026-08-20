@@ -96,6 +96,47 @@ void MainComponent::getNextAudioBlock (const juce::AudioSourceChannelInfo& buffe
     }
 }
 
+/*
+void MainComponent::getNextAudioBlock(
+    const juce::AudioSourceChannelInfo& bufferToFill)
+{
+    auto* buffer = bufferToFill.buffer;
+
+    for (int channel = 0;
+         channel < buffer->getNumChannels();
+         ++channel)
+    {
+        auto* channelData =
+            buffer->getWritePointer(channel,
+                                    bufferToFill.startSample);
+
+        for (int sample = 0;
+             sample < bufferToFill.numSamples;
+             ++sample)
+        {
+            float oscillatorSample =
+                oscillator.getNextSample();
+
+            float envelopeSample =
+                envelope.getNextSample();
+
+            channelData[sample] =
+                oscillatorSample * envelopeSample;
+
+            samplesSinceNoteOn++;
+
+            if (samplesSinceNoteOn >= 2 * currentSampleRate &&
+                !noteReleased)
+            {
+                envelope.noteOff();
+                noteReleased = true;
+            }
+        }
+    }
+}
+    
+    */
+
 void MainComponent::releaseResources()
 {
     // This will be called when the audio device stops, or when it is being
