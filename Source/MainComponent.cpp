@@ -68,39 +68,6 @@ void MainComponent::getNextAudioBlock (const juce::AudioSourceChannelInfo& buffe
     // bufferToFill.clearActiveBufferRegion();
     
     auto* buffer = bufferToFill.buffer;
-    
-    for (int channel =0;
-         channel < buffer->getNumChannels();
-         ++channel)
-    {
-        auto* channelData =
-            buffer->getWritePointer(channel,
-                                    bufferToFill.startSample);
-        
-        for (int sample = 0;
-             sample < bufferToFill.numSamples;
-             ++sample)
-        {
-            // channelData[sample] =
-            // oscillator.getNextSample();
-            
-            float oscillatorSample =
-                oscillator.getNextSample();
-            
-            float envelopeSample =
-                envelope.getNextSample();
-            
-            channelData[sample] =
-                oscillatorSample * envelopeSample;
-        }
-    }
-}
-
-/*
-void MainComponent::getNextAudioBlock(
-    const juce::AudioSourceChannelInfo& bufferToFill)
-{
-    auto* buffer = bufferToFill.buffer;
 
     for (int channel = 0;
          channel < buffer->getNumChannels();
@@ -134,8 +101,6 @@ void MainComponent::getNextAudioBlock(
         }
     }
 }
-    
-    */
 
 void MainComponent::releaseResources()
 {
