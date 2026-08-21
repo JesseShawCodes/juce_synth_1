@@ -36,5 +36,5 @@ float SynthVoice::getNextSample()
     const float envelopeSample =
     envelope.getNextSample();
     
-    return oscillatorSample + envelopeSample;
+    return oscillatorSample * envelopeSample;
 }
