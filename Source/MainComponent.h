@@ -1,8 +1,7 @@
 #pragma once
 
 #include <JuceHeader.h>
-#include "SineOscillator.h"
-#include "Envelope.h"
+#include "SynthVoice.h"
 
 class MainComponent  : public juce::AudioAppComponent
 {
@@ -23,8 +22,7 @@ public:
 private:
     //==============================================================================
     // Your private member variables go here...
-    SineOscillator oscillator;
-    Envelope envelope;
+    SynthVoice voice;
     
     int samplesSinceNoteOn = 0;
     bool noteReleased = false;

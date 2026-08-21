@@ -46,12 +46,9 @@ void MainComponent::prepareToPlay (int samplesPerBlockExpected, double sampleRat
     // For more details, see the help for AudioProcessor::prepareToPlay()
     currentSampleRate = sampleRate;
     
-    oscillator.setSampleRate(sampleRate);
-    oscillator.setFrequency(440.0);
+    voice.prepareToPlay(sampleRate);
     
-    envelope.setSampleRate(sampleRate);
-    
-    envelope.noteOn();
+    // envelope.noteOn();
     
     samplesSinceNoteOn = 0;
     noteReleased = false;
@@ -69,36 +66,32 @@ void MainComponent::getNextAudioBlock (const juce::AudioSourceChannelInfo& buffe
     
     auto* buffer = bufferToFill.buffer;
 
-    for (int channel = 0;
-         channel < buffer->getNumChannels();
-         ++channel)
+    for (int sample = 0;
+         sample < bufferToFill.numSamples;
+         ++sample)
     {
-        auto* channelData =
-            buffer->getWritePointer(channel,
-                                    bufferToFill.startSample);
-
-        for (int sample = 0;
-             sample < bufferToFill.numSamples;
-             ++sample)
-        {
-            float oscillatorSample =
-                oscillator.getNextSample();
-
-            float envelopeSample =
-                envelope.getNextSample();
-
-            channelData[sample] =
-                oscillatorSample * envelopeSample;
-
-            samplesSinceNoteOn++;
-
-            if (samplesSinceNoteOn >= 2 * currentSampleRate &&
-                !noteReleased)
-            {
-                envelope.noteOff();
-                noteReleased = true;
-            }
+        const float outputSample =
+        voice.getNextSample();
+        
+        samplesSinceNoteOn++;
+        
+        if (samplesSinceNoteOn >= 2 * currentSampleRate && !noteReleased) {
+            voice.noteOff();
+            noteReleased = true;
         }
+        
+        for (int channel = 0;
+             channel < buffer->getNumChannels();
+             ++channel)
+        {
+            buffer->setSample(
+                  channel,
+                  bufferToFill.startSample + sample,
+                  outputSample
+          );
+        }
+
+
     }
 }
 

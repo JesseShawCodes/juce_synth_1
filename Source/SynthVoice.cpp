@@ -17,3 +17,24 @@ void SynthVoice::prepareToPlay(double sampleRate)
     
     envelope.setSampleRate(sampleRate);
 }
+
+void SynthVoice::noteOn()
+{
+    envelope.noteOn();
+}
+
+void SynthVoice::noteOff()
+{
+    envelope.noteOff();
+}
+
+float SynthVoice::getNextSample()
+{
+    const float oscillatorSample =
+    oscillator.getNextSample();
+    
+    const float envelopeSample =
+    envelope.getNextSample();
+    
+    return oscillatorSample + envelopeSample;
+}
