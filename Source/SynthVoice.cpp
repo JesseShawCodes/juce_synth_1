@@ -10,7 +10,7 @@
 
 #include "SynthVoice.h"
 
-void SynthVoice::prepareToPlay(<#double sampleRate#>)
+void SynthVoice::prepareToPlay(double sampleRate)
 {
     oscillator.setSampleRate(sampleRate);
     oscillator.setFrequency(440.0);
