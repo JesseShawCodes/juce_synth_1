@@ -4,3 +4,6 @@ Builds/
 
 # Environment Variables
 .env
+
+# macOS
+.DS_Store
