@@ -14,6 +14,8 @@
             file="Source/MainComponent.cpp"/>
       <FILE id="EnvHdr" name="Envelope.h" compile="0" resource="0" file="Source/Envelope.h"/>
       <FILE id="EnvCpp" name="Envelope.cpp" compile="1" resource="0" file="Source/Envelope.cpp"/>
+      <FILE id="JRocKQ" name="SynthVoice.cpp" compile="1" resource="0" file="Source/SynthVoice.cpp"/>
+      <FILE id="Khii4l" name="SynthVoice.h" compile="0" resource="0" file="Source/SynthVoice.h"/>
     </GROUP>
   </MAINGROUP>
   <MODULES>
