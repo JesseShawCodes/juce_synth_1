@@ -52,6 +52,7 @@ void MainComponent::prepareToPlay (int samplesPerBlockExpected, double sampleRat
     
     samplesSinceNoteOn = 0;
     noteReleased = false;
+    voice.noteOn();
 }
 
 void MainComponent::getNextAudioBlock (const juce::AudioSourceChannelInfo& bufferToFill)
