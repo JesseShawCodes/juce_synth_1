@@ -44,13 +44,10 @@ void MainComponent::prepareToPlay (int samplesPerBlockExpected, double sampleRat
     // but be careful - it will be called on the audio thread, not the GUI thread.
 
     // For more details, see the help for AudioProcessor::prepareToPlay()
-    currentSampleRate = sampleRate;
     
     voice.prepareToPlay(sampleRate);
     
     voice.noteOn();
-    samplesSinceNoteOn = 0;
-    noteReleased = false;
 }
 
 void MainComponent::getNextAudioBlock (const juce::AudioSourceChannelInfo& bufferToFill)
