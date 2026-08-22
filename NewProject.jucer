@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="YlOjdu" name="NewProject" projectType="guiapp" useAppConfig="0"
+<JUCERPROJECT id="YlOjdu" name="Juce_synth" projectType="guiapp" useAppConfig="0"
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
-  <MAINGROUP id="FyOL96" name="NewProject">
+  <MAINGROUP id="FyOL96" name="Juce_synth">
     <GROUP id="{5A7F4AE8-6384-0E69-15DB-F1667D0722C0}" name="Source">
       <FILE id="U1TZeu" name="SineOscillator.h" compile="0" resource="0"
             file="Source/SineOscillator.h"/>

@@ -72,13 +72,6 @@ void MainComponent::getNextAudioBlock (const juce::AudioSourceChannelInfo& buffe
         const float outputSample =
         voice.getNextSample();
         
-        samplesSinceNoteOn++;
-        
-        if (samplesSinceNoteOn >= 2 * currentSampleRate && !noteReleased) {
-            voice.noteOff();
-            noteReleased = true;
-        }
-        
         for (int channel = 0;
              channel < buffer->getNumChannels();
              ++channel)
