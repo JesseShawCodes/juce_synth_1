@@ -9,6 +9,7 @@
 */
 
 #include "SynthVoice.h"
+#include <cmath>
 
 void SynthVoice::prepareToPlay(double sampleRate)
 {
@@ -18,8 +19,13 @@ void SynthVoice::prepareToPlay(double sampleRate)
     envelope.setSampleRate(sampleRate);
 }
 
-void SynthVoice::noteOn()
+void SynthVoice::noteOn(int midiNote)
 {
+    const double frequency =
+        440.0 * std::pow(2.0, (midiNote - 69) / 12.0);
+    
+    oscillator.setFrequency(frequency);
+    
     envelope.noteOn();
 }
 

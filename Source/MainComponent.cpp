@@ -1,4 +1,5 @@
 #include "MainComponent.h"
+#include <cstdint>
 
 //==============================================================================
 MainComponent::MainComponent()
@@ -47,7 +48,10 @@ void MainComponent::prepareToPlay (int samplesPerBlockExpected, double sampleRat
     
     voice.prepareToPlay(sampleRate);
     
-    voice.noteOn();
+    auto noteOnMessage =
+        juce::MidiMessage::noteOn(1, 60, (uint8_t)100);
+    
+    handleMidiMessage(noteOnMessage);
 }
 
 void MainComponent::getNextAudioBlock (const juce::AudioSourceChannelInfo& bufferToFill)
@@ -106,4 +110,19 @@ void MainComponent::resized()
     // This is called when the MainContentComponent is resized.
     // If you add any child components, this is where you should
     // update their positions.
+}
+
+void MainComponent::handleMidiMessage(
+    const juce::MidiMessage& message)
+{
+    if (message.isNoteOn())
+    {
+        const int midiNote = message.getNoteNumber();
+        
+        voice.noteOn(midiNote);
+    }
+    else if (message.isNoteOff())
+    {
+        voice.noteOff();
+    }
 }

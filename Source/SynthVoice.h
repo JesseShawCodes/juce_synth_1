@@ -18,7 +18,7 @@ class SynthVoice
 public:
     void prepareToPlay(double sampleRate);
     
-    void noteOn();
+    void noteOn(int midiNote);
     void noteOff();
     
     float getNextSample();
