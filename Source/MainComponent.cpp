@@ -10,6 +10,14 @@ MainComponent::MainComponent()
     
     setAudioChannels(0, 2);
     
+    auto midiDevices =
+        juce::MidiInput::getAvailableDevices();
+    
+    for (const auto& device : midiDevices)
+    {
+        DBG("MIDI Device: "+ device.name);
+    }
+    
     // envelope.noteOn();
     
     /*
