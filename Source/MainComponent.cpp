@@ -49,7 +49,7 @@ void MainComponent::prepareToPlay (int samplesPerBlockExpected, double sampleRat
     voice.prepareToPlay(sampleRate);
     
     auto noteOnMessage =
-        juce::MidiMessage::noteOn(1, 60, (uint8_t)100);
+        juce::MidiMessage::noteOn(1, 60, static_cast<uint8_t>(100));
     
     handleMidiMessage(noteOnMessage);
 }
