@@ -2,9 +2,8 @@
 
 #include <JuceHeader.h>
 #include "SynthVoice.h"
-#include <juce_audio_devices/juce_audio_devices.h>
 
-class MainComponent  : public juce::AudioAppComponent
+class MainComponent : public juce::AudioAppComponent, public juce::MidiInputCallback
 {
 public:
     //==============================================================================
@@ -27,7 +26,7 @@ private:
     
     void handleIncomingMidiMessage(
         juce::MidiInput* source,
-        const juce::MidiMessage& message);
+        const juce::MidiMessage& message) override;
     
     SynthVoice voice;
     

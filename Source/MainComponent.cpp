@@ -13,33 +13,40 @@ MainComponent::MainComponent()
     auto midiDevices =
         juce::MidiInput::getAvailableDevices();
     
-    for (const auto& device : midiDevices)
+    if (!midiDevices.isEmpty())
     {
-        DBG("MIDI Device: "+ device.name);
-    }
-    
-    // envelope.noteOn();
-    
-    /*
-
-    // Some platforms require permissions to open input channels so request that here
-    if (juce::RuntimePermissions::isRequired (juce::RuntimePermissions::recordAudio)
-        && ! juce::RuntimePermissions::isGranted (juce::RuntimePermissions::recordAudio))
-    {
-        juce::RuntimePermissions::request (juce::RuntimePermissions::recordAudio,
-                                           [&] (bool granted) { setAudioChannels (granted ? 2 : 0, 2); });
+        const auto& device = midiDevices.getFirst();
+        
+        DBG("Opening MIDI device: " + device.name);
+        
+        midiInput = juce::MidiInput::openDevice(
+            device.identifier,
+            this
+        );
+        
+        if (midiInput != nullptr)
+        {
+            midiInput->start();
+            
+            DBG("MIDI device opened successfully.");
+        }
+        else
+        {
+            DBG("FAILED to open MIDI device.");
+        }
     }
     else
     {
-        // Specify the number of input and output channels that we want to open
-        setAudioChannels (2, 2);
+        DBG("No MIDI input devices available.");
     }
-     */
 }
 
 MainComponent::~MainComponent()
 {
     // This shuts down the audio device and clears the audio source.
+    if (midiInput != nullptr)
+        midiInput->stop();
+
     shutdownAudio();
 }
 
@@ -55,11 +62,6 @@ void MainComponent::prepareToPlay (int samplesPerBlockExpected, double sampleRat
     // For more details, see the help for AudioProcessor::prepareToPlay()
     
     voice.prepareToPlay(sampleRate);
-    
-    auto noteOnMessage =
-        juce::MidiMessage::noteOn(1, 60, static_cast<uint8_t>(100));
-    
-    handleMidiMessage(noteOnMessage);
 }
 
 void MainComponent::getNextAudioBlock (const juce::AudioSourceChannelInfo& bufferToFill)
@@ -133,4 +135,9 @@ void MainComponent::handleMidiMessage(
     {
         voice.noteOff();
     }
+}
+
+void MainComponent::handleIncomingMidiMessage(juce::MidiInput* source, const juce::MidiMessage& message)
+{
+    handleMidiMessage(message);
 }
